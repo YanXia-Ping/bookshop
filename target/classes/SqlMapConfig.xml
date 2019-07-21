@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration  
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  <configuration>
+  <!-- 配置环境 -->
+ <environments default="mysql">
+  	<!-- 配置mysql环境 -->
+  		<environment id="mysql">
+  		<!-- 配置事务类型 -->
+  			<transactionManager type="JDBC"></transactionManager>
+  			<!-- 配置数据库连接池 -->
+  			<dataSource type="POOLED">
+  				<!-- 配置数据库的四个基本信息 -->
+  				<property name="driver" value="com.mysql.jdbc.Driver"/>
+  				<property name="url" value="jdbc:mysql:///bookshop"/>
+  				<property name="username" value="root"/>
+  				<property name="password" value="77577876"/>
+  			</dataSource>
+  			
+  		</environment>
+  	</environments>
+  <!-- 引入映射配置文件 -->
+  <mappers>
+  	<!--<mapper class="cn.itcast.dao.BookDao"/>  -->
+  	<package name="cn.itcast.dao"/>
+  </mappers>
+  </configuration>
